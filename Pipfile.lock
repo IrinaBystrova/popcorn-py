@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f5ae5134ded17b0c078d625a493a13949297d2ff874e34e6cc401b384d450b1e"
+            "sha256": "972bd46abf1cddcc5b31852775b5a8df4695241034e36e1993ceb4dad52278b7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -121,6 +121,22 @@
                 "sha256:3b5103e8789da9e936a68d993b70df732d06b8bb9a337a05ed4eb52c17ef7206"
             ],
             "version": "==1.0.3"
+        },
+        "dj-database-url": {
+            "hashes": [
+                "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163",
+                "sha256:851785365761ebe4994a921b433062309eb882fedd318e1b0fcecc607ed02da9"
+            ],
+            "index": "pypi",
+            "version": "==0.5.0"
+        },
+        "django": {
+            "hashes": [
+                "sha256:275bec66fd2588dd517ada59b8bfb23d4a9abc5a362349139ddda3c7ff6f5ade",
+                "sha256:939652e9d34d7d53d74d5d8ef82a19e5f8bb2de75618f7e5360691b6e9667963"
+            ],
+            "index": "pypi",
+            "version": "==2.1.7"
         },
         "hyperlink": {
             "hashes": [
@@ -294,6 +310,13 @@
             ],
             "version": "==19.0.0"
         },
+        "pytz": {
+            "hashes": [
+                "sha256:32b0891edff07e28efe91284ed9c31e123d84bea3fd98e1f72be2508f43ef8d9",
+                "sha256:d5f05e487007e29e03409f9398d074e158d920d36eb82eaf66fb1136b0c5374c"
+            ],
+            "version": "==2018.9"
+        },
         "queuelib": {
             "hashes": [
                 "sha256:42b413295551bdc24ed9376c1a2cd7d0b1b0fa4746b77b27ca2b797a276a1a17",
@@ -316,6 +339,14 @@
             ],
             "index": "pypi",
             "version": "==1.6.0"
+        },
+        "scrapy-djangoitem": {
+            "hashes": [
+                "sha256:2c633ae1559f6e3d43c9a5ebb19aa5a64152deef434aa3fa57168e6b002d9c50",
+                "sha256:58da093778f2cd92734b5539adcb60d59854475050d7511c42173bd8c104acef"
+            ],
+            "index": "pypi",
+            "version": "==1.1.1"
         },
         "service-identity": {
             "hashes": [
