@@ -22,7 +22,7 @@ class LostfilmNewSpider(BaseMixin, CrawlSpider):
     name = 'new_items_spider'
     allowed_dominas = ['www.lostfilm.tv']
     rules = [Rule(LinkExtractor(
-        allow=(r'/new/page_\d{,2}\b',)),
+        allow=(r'/new/page_\d{,3}\b',)),
         follow=True, callback='parse_page', process_links='finish_module'), ]
     last_page = None
     last_episode_date = None
@@ -67,9 +67,16 @@ class LostfilmNewSpider(BaseMixin, CrawlSpider):
             cookies_for_page = {}
             for key, morsel in self.cookies.items():
                 cookies_for_page[key] = morsel.value
-
             series_name = info.css('.name-ru').xpath('./text()').extract()
-            episode_name, episode_date_words = info.css('.alpha').xpath('./text()').extract()
+            name_plus_date = info.css('.alpha').xpath('./text()').extract()
+
+            if len(name_plus_date) == 2:
+                episode_name = name_plus_date[0]
+                episode_date_words = name_plus_date[1]
+            else:
+                episode_name = info.css('.beta').xpath('./text()').extract()[0]
+                episode_date_words = name_plus_date[0]
+
             episode_date_words = episode_date_words[-10:]
             episode_date = datetime.strptime(episode_date_words, '%d.%m.%Y')
 
