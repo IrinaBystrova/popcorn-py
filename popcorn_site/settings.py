@@ -25,7 +25,7 @@ SECRET_KEY = 'b_2p+s(l6&m$luvq#b!50o^3z7ohimkg9s(en2@)p1f-@miq52'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -76,7 +76,8 @@ WSGI_APPLICATION = 'popcorn_site.wsgi.application'
 import dj_database_url
 
 conf_string = 'postgres://localhost:5432/scrapy'
-DATABASES = {'default': dj_database_url.config(default=conf_string)}
+conf_string_dckr = 'postgres://postgres@db:5432/scrapy'
+DATABASES = {'default': dj_database_url.config(default=conf_string_dckr)}
 
 
 # Password validation

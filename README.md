@@ -1,27 +1,12 @@
 # popcorn-py
 `site with links for TV series torrents`
 
-### venv
+### launch with docker
 ```
-pipenv install
-```
-
-### database
-postgres, database named scrapy
-```
-python manage.py makemigrations
-python manage.py migrate
-```
-
-### spiders
-launch 
-```
-python manage.py crawl_series
-python manage.py crawl_new_tems
-```
-
-### django
-```
-python manage.py createsuperuser
-python manage.py runserver
+docker-compose build && docker-compose up -d && 
+docker-compose run web python manage.py migrate && 
+docker-compose run web python manage.py crawl_series &&
+docker-compose run web python manage.py crawl_new_items &&
+docker-compose run web python manage.py createsuperuser &&
+docker-compose up
 ```
