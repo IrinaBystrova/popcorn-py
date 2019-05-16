@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^series/$', views.SeriesView.as_view(), name='series'),
     url(r'^series/(?P<pk>\d+)$', views.SeriesDetailView.as_view(),
         name='series-details'),
+    url(r'^search/$', views.search),
 ]

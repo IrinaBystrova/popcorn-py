@@ -31,21 +31,23 @@
 
                 {% block pagination %}
                     {% if is_paginated %}
-                        <div class="pagination">
-                            <span class="page-links">
+                        <nav aria-label="Навигация по страницам">
+                            <ul class="pager">
                                 {% if page_obj.has_previous %}
-                                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                                <li class="previous"><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"> Previous </a></li>
+                                {% else %}
+                                <li class="previous disabled"><a href="#"> Previous </a></li>
                                 {% endif %}
-                                <span class="page-current">
-                                    page {{ page_obj.number }} of {{ page_obj.next_page_number }}
-                                </span>
                                 {% if page_obj.has_next %}
-                                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                                <li class="next"><a href="{{ request.path }}?page={{ page_obj.next_page_number }}"> Next </a></li>
+                                {% else %}
+                                <li class="next disabled"><a href="#"> Next </a></li>
                                 {% endif %}
-                            </span>
-                        </div>
+                            </ul>
+                        </nav>
                     {% endif %}
                 {% endblock %}
+
             </div>
         </div>
     </div>

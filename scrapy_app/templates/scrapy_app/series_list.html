@@ -3,6 +3,11 @@
 {% block content %}
     <h1>Series list</h1>
 
+    <form action="/popcorn-py/search/" method="get">
+        <input placeholder="Series name.." type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+
     {% if series_list %}
     <ul>
         {% for series in series_list %}
